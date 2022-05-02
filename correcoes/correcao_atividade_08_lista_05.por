@@ -18,10 +18,12 @@ programa
 			}
 		}
 		listapares(numerospares, contapar)
-		listaimpares(numerosimpares, contaimpar)	
+		listaimpares(numerosimpares, contaimpar)
+		fusao(numerospares, numerosimpares, contapar, contaimpar)
 	}
 	funcao listapares(inteiro numerospares[], inteiro contapar){
 		inteiro copia = 0
+		escreva("numeros pares : \n")
 		para(inteiro j=0; j < contapar; j++){
 			para(inteiro i=0; i < contapar - 1; i++) {
 
@@ -39,6 +41,7 @@ programa
 	}
 	funcao listaimpares(inteiro numerosimpares[], inteiro contaimpar){
 		inteiro copia = 0
+		
 		para(inteiro j=0; j < contaimpar; j++){
 			para(inteiro i=0; i < contaimpar - 1; i++) {
 
@@ -55,13 +58,26 @@ programa
 			escreva(numerosimpares[i], "\n")
 		}
 	}
+	funcao fusao(inteiro numerospares[], inteiro numerosimpares[], inteiro contapar, inteiro contaimpar){
+		inteiro conca[10]
+		para(inteiro i=0; i < contapar+i; i++){
+		conca[i] = numerospares[i]
+		contapar--
+		escreva("\n",conca[i])
+		}
+		para(inteiro i=0; i < contaimpar+i; i++){
+		conca[i+contapar] = numerosimpares[i]
+		contaimpar--
+		escreva("\n",conca[i])
+		}
+	}
 }
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1283; 
+ * @POSICAO-CURSOR = 1831; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
