@@ -184,14 +184,14 @@ programa
 	funcao fusao(inteiro numerospares[], inteiro numerosimpares[], inteiro contapar, inteiro contaimpar){
 		inteiro conca[10]
 		para(inteiro i=0; i < contapar+i; i++){
-		conca[i] = numerospares[i]
-		contapar--
-		escreva("\n",conca[i])
+			conca[i] = numerospares[i]
+			contapar--
+			escreva("\n",conca[i])
 		}
 		para(inteiro i=0; i < contaimpar+i; i++){
-		conca[i+contapar] = numerosimpares[i]
-		contaimpar--
-		escreva("\n",conca[i])
+			conca[i+contapar] = numerosimpares[i]
+			contaimpar--
+			escreva("\n",conca[i])
 		}
 	}
 	funcao exe_09(){
@@ -245,7 +245,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2362; 
+ * @POSICAO-CURSOR = 4130; 
  * @DOBRAMENTO-CODIGO = [30, 41, 52, 67, 84, 109, 196, 219];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
