@@ -9,19 +9,16 @@ section {
   height: 100px;
   width: 200px;
 }
-carro {
+#carro {
+  float: left;
   margin: auto;
   border: 1px solid #ff3333;
   padding: 5px;
   height: 100px;
   width: 200px;
 }
-button {
-  color: #ffffff;
-}
-#goiaba {
-  color: #ff3333;
-}
+
 .Banana {
-  color: #33ff33 !important;
+  color: #000000
+   ;
 }
