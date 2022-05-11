@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #00856f;
+  --paragraph: #495057;
+  --gray-headline: #212529;
+  --bg-brand: #dce9e2;
+
+  font-size: 62.5%;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.6rem;
+  text-align: center;
+}
+header {
+  width: 37.5rem;
+  height: 108rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--bg-brand);
+}
+h3 {
+  padding-top: 4.1rem;
+
+  color: var(--primary-color);
+}
+h1 {
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 130%;
+
+  color: var(--gray-headline);
+  margin-bottom: 2.4rem;
+  margin-top: 2.4rem;
+}
+p {
+  color: var(--paragraph);
+  line-height: 150%;
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  margin-bottom: 3.2rem;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  gap: 1.6px;
+
+  border-radius: 4rem;
+
+  width: 26.3rem;
+  height: 6.2rem;
+
+  margin-bottom: 6rem;
+  border: none;
+}
+.pacientes {
+  color: var(--gray-headline);
+  font-weight: 700;
+  font-size: 4.8rem;
+  line-height: 130%;
+}
+.paciente-tex {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+.especialistas {
+  color: var(--gray-headline);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 130%;
+}
+.especialistas-tex {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+.anos {
+  color: var(--gray-headline);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 130%;
+}
+.anos-tex {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+.fundo {
+  background: #fffaf1;
+  border: 1px solid #dce9e2;
+  border-radius: 6px;
+  width: 327px;
+  height: 470px;
+  left: 24px;
+  top: 828px;
+  margin-left: auto;
+  margin-right: auto;
+}
