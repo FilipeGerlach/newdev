@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-reprodutor {
+  width: 375px;
+  height: 418px;
+}
+.aud{
+  width: 375px;
+}

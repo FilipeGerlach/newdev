@@ -1,0 +1,86 @@
+body {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 447px;
+  height: 629px;
+
+  background: #ffffff;
+  border: 1px solid #0720fd;
+  font-family: 'Jura', sans-serif;
+}
+.texto {
+  size: 24px;
+  text-align: center;
+  line-height: 28px;
+  justify-content: center;
+  padding-inline: 100px;
+}
+.botao1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 38px 16px 32px;
+  gap: 16px;
+  position: relative;
+  width: 170px;
+  height: 50px;
+
+  background: #8d0000;
+  border-radius: 80px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+.botao2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 38px 16px 32px;
+  gap: 16px;
+
+  position: relative;
+  width: 170px;
+  height: 50px;
+
+  background: #00856f;
+  border-radius: 80px;
+ 
+
+
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
+.botoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10rem;
+}
+.final{
+  position: absolute;
+width: 320px;
+height: 17px;
+
+font-family: 'Jura';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+
+
+text-transform: uppercase;
+
+color: #000000;
+margin-top: 6rem;
+}

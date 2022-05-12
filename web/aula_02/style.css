@@ -1,0 +1,51 @@
+.centro {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.rosa {
+  position: absolute;
+  width: 590px;
+  height: 558px;
+
+  background: #ffa5a5;
+}
+.cinza {
+  position: absolute;
+  width: 443px;
+  height: 428px;
+  top: 70px;
+  
+
+  background: #bdbbbb;
+}
+.verde {
+  position: absolute;
+  width: 331px;
+  height: 321px;
+  top: 125px;
+ 
+
+  background: #128d0f;
+}
+.verdeescuro {
+  position: absolute;
+  width: 190px;
+  height: 192px;
+  top: 190px;
+  
+
+  background: #043c2e;
+}
+.bolinha {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+
+  top: 250px;
+ 
+
+  background: #ff0000;
+  border-radius: 50px;
+}
