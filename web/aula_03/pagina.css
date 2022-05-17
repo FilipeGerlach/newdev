@@ -9,10 +9,158 @@
 body {
   font-size: 1.6rem;
 }
+.container{
+  position: absolute;
+  width: 72.9rem;
+  height: 80.3rem;
+
+  background: #FFFFFD;
+}
 .fundoini{
   position: absolute;
   width: 73.1rem;
   height: 21.2rem;
 
-  background: rgba(240, 92, 84, 0.86)
+  background: rgba(240, 92, 84, 0.86)  
 }
+.fundoinic{
+  margin-left: auto;
+  margin-right: auto;
+  width: 8rem;
+  height: 8rem;
+}
+.texto{
+  font-family: 'Inter', sans-serif;
+  
+  margin-left: auto;
+  margin-right: auto;
+  width: 115px;
+  height: 34px;
+  
+
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+
+  color: #FFFFFF;
+}
+.textos{
+  display: flex;
+  justify-content: center;
+}
+.texto1{
+  width: 115px;
+  height: 48px;
+
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+
+color: #FFFFFF;
+}
+.texto2{
+  width: 118px;
+  height: 50px;
+
+  font-family: 'Oleo Script';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+
+
+  display: flex;
+  align-items: center;
+  text-align: justify;
+
+  color: #423431; 
+}
+.meio{
+  display: flex;
+  margin-top: 21.2rem;
+  position: absolute;
+  width: 72.9rem;
+  height: 48.4rem;
+
+  background: #FFFFFD;
+}
+.texto3{
+  margin-top: 3.6rem;
+  margin-left: 2.5rem;
+  position: absolute;
+  width: 346px;
+  height: 39px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+
+
+  color: #423431;
+}
+.texto4{
+  margin-top: 8.5rem;
+  margin-left: 2.5rem;
+  width: 671px;
+  height: 83px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  
+  color: #6A6B5F;
+}
+.caixa{
+  margin-top: 38.1rem;
+  display: flex;
+  flex-direction: column;
+
+}
+.texto5{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2.0rem;
+  position: absolute;
+  width: 204px;
+  height: 191px;
+
+  background: #457D97;
+}
+.texto6{
+  position: absolute;
+  width: 194px;
+  height: 89px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 40rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  margin-top: 20.5rem;
+  margin-left: 2.5rem;
+
+  color: #6A6B5F;
+}
+
+
