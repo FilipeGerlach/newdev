@@ -16,7 +16,7 @@ body {
 .fundo {
   position: absolute;
   width: 72.9rem;
-  height: 100.3rem;
+  height: 200.3rem;
 
   background: #ffffff;
 }
@@ -57,10 +57,67 @@ body {
   line-height: 19px;
   
   
+  
   text-align: justify;
 
   color: #000000;
 }
 button{
+  margin-left: 50rem;
   font-family: 'Telex';
+  background-color: white;
+  color: black;
+  width: 15rem;
+  height: 4rem;
+  border-radius: 8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover {
+color: white;
+background-color: blueviolet;
+}
+button:first-child:hover{
+background-color: blueviolet;
+color: white;
+}
+button:first-child {
+border: 1px solid blueviolet;
+color: black;
+}
+.texto2{
+  margin-top: 4rem;
+  margin-left: 2rem;
+  display: flex;
+  font-family: 'Telex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 19px;
+  
+  
+  text-align: justify;
+
+  color: #000000;
+}
+hr{
+    margin-top: 4rem;
+    height: 0.5rem;
+    background: rgba(136, 59, 183, 0.86);
+}
+.texto3{
+  margin-top: 4rem;
+  margin-left: 2rem;
+  display: flex;
+  font-family: 'Telex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 19px;
+  
+  
+  text-align: justify;
+
+  color: #000000;
 }

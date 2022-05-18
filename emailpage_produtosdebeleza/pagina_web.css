@@ -16,7 +16,7 @@ body {
 .fundo {
   position: absolute;
   width: 72.9rem;
-  height: 100.3rem;
+  height: 200.3rem;
 
   background: #ffffff;
 }
@@ -26,19 +26,19 @@ body {
   justify-content: baseline;
 
   width: 73.1rem;
-  height: 21.2rem;
+  height: 10rem;
 
   background: rgba(136, 59, 183, 0.86);
-  border-radius: 0rem 0rem 5rem 5rem;
+  
 }
 .textocabe {
   margin-left: auto;
   margin-right: auto;
 
-  font-family: 'Telex', sans-serif;
+  
   font-family: 'Open Sans', sans-serif;
 
-  font-family: 'Tiro Bangla';
+  text-transform: uppercase;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -46,21 +46,115 @@ body {
 
   color: #ffffff;
 }
-.texto1 {
+.imagem1{
+  display: flex;
   margin-top: 4rem;
   margin-left: 2rem;
+}
+.texto1 {
+  
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   display: flex;
   font-family: 'Telex';
   font-style: normal;
   font-weight: 400;
   font-size: 2rem;
   line-height: 19px;
-  
-  
+
   text-align: justify;
 
   color: #000000;
 }
-button{
+button {
+  margin-left: 50rem;
   font-family: 'Telex';
+  background-color: white;
+  color: black;
+  width: 15rem;
+  height: 4rem;
+  border-radius: 8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover {
+  color: white;
+  background-color: blueviolet;
+}
+button:first-child:hover {
+  background-color: blueviolet;
+  color: white;
+}
+button:first-child {
+  border: 1px solid blueviolet;
+  color: black;
+}
+.imagem2{
+  display: flex;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  
+}
+.texto2 {
+  
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  font-family: 'Telex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 19px;
+
+  text-align: justify;
+
+  color: #000000;
+}
+hr {
+  margin-top: 4rem;
+  height: 0.5rem;
+  background: rgba(136, 59, 183, 0.86);
+}
+.imagem3{
+  display: flex;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  
+}
+.texto3 {
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  font-family: 'Telex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 19px;
+
+  text-align: justify;
+
+  color: #000000;
+}
+.video1{
+  width: 5rem;
+}
+h2{
+  margin-top: 4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  font-family: 'Telex';
+  font-style: normal;
+  font-weight: 400;
+  
+  line-height: 19px;
+
+  text-align: justify;
+
+  color: #000000;
+  padding-bottom: 4rem;
 }

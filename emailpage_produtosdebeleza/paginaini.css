@@ -1,0 +1,22 @@
+.img-background {
+  
+  box-sizing: 100%;
+  height: 50rem;
+  width: 100%;
+  margin-top: 5rem;
+  object-fit: cover;
+  
+  background-image: url('https://s2.glbimg.com/Ha2q-YYa3pCWtwM4E51zi_p-POI=/940x523/e.glbimg.com/og/ed/f/original/2019/02/20/blow-dry-bar-del-mar-chairs-counter-853427.jpg');  
+  background-repeat: no-repeat;
+  
+}
+.texto{
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  color:#fff;
+  text-align: center;
+  top: 100px;
+  width: 250px;
+  line-height: 30px;
+  height: 30px;
+}
