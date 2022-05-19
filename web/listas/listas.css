@@ -2,7 +2,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 :root {
   font-size: 62.5%;
 }
@@ -10,11 +9,11 @@ html,
 body {
   height: 100%;
 }
-
 body {
-  background-color: gray;
+  
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
+  
 }
 header {
   display: flex;
@@ -35,12 +34,14 @@ header,
 main,
 footer {
   width: 80%;
-  
+  background-color: #f5f5f5;
   margin: 0 auto;
 }
 main {
   display: flex;
   padding: 3rem;
+  
+  
 }
 main section:first-child {
   display: flex;
@@ -50,13 +51,13 @@ main section:first-child {
   padding-inline: 2rem;
   
 }
-ul {
+header ul {
   list-style-type: none;
   display: flex;
   align-items: center;
 }
 
-li {
+header li {
   margin-right: 2rem;
 }
 a {
@@ -75,6 +76,7 @@ footer{
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  
 }
 .social i{
   margin-right: 1rem;
@@ -83,3 +85,53 @@ footer{
   color: rgb(165, 59, 59);
   cursor: pointer;
 }
+.social .fa-facebook-square:hover{
+  color: #3a5796;
+  cursor: pointer;
+}
+.social .fa-twitter:hover{
+  color: #1da1f2;
+}
+.social a{
+  text-decoration: none;
+  color: inherit;
+  
+}
+ footer .social, p{
+   padding: 1rem;
+ }
+ .botoes button{
+   text-transform: uppercase;
+   font-size: 2.4rem;
+   padding: 1rem;
+   border: none;
+   border-radius: 2rem;
+   border-right: 3rem;
+   color: rgb(165, 59, 59);
+   
+   width: 18rem;
+   cursor: pointer;
+   border: 1px solid rgb(165, 59, 59);
+   background-color: #fff;
+
+ }
+ .botoes button:hover{
+   color: white;
+   background-color: rgb(165, 59, 59);
+ }
+ .frutas{
+   width: 40rem;
+   background-color: rgba(255,255,255,0.472);
+   padding: 2rem;
+   margin-bottom: 2rem;
+   background-image: url(https://11904.cdn.simplo7.net/static/11904/sku/thumb_colecao-especial-tecido-tricoline-especial-frutaria-bege-100-algodao-largura-1-50m-1644240763673.jpg);
+   background-repeat: no-repeat;
+   
+ }
+ .frutas ul{
+   list-style-type: none;
+ }
+ .frutas li{
+   margin-top: 1.4rem;
+   font-size: 2.4rem;
+ }
