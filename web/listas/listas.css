@@ -135,3 +135,68 @@ footer{
    margin-top: 1.3rem;
    font-size: 2.4rem;
  }
+ /* SOBRE NÓS */
+ .main-about{
+   display: flex;
+   flex-direction: column;
+
+ }
+ .main-about p{
+   line-height: 2rem;
+   text-align: justify;
+   margin-top: 2rem;
+ }
+ .main-about h2{
+   margin-top: 2rem;
+ }
+ table{
+   margin-top: 5rem;
+   border: 1px solid #ccc;
+ }
+ thead{
+   text-align: left;
+ }
+  tr {
+   padding-top: 2rem;
+ }
+ th,td{
+   border: 1px solid #ccc;
+   padding: 1rem;
+ }
+ .esquerda{
+   padding-top: 10rem;
+   padding-bottom: 10rem;
+   padding-left: 4rem;
+   padding-right: 4rem;
+   background-color: black;
+   margin-left: 7rem;
+ }
+.main-contato{
+  color: #fff;
+}
+.p1{
+  padding: 0rem;
+  font-size: 2.5rem;
+}
+.p2{
+  padding-bottom: 3rem;
+  font-size: 1.5rem;
+  color: gray;
+}
+.fa-location-dot, .fa-phone, .fa-envelope{
+  color: gray;
+}
+.p3{
+  
+  color: green;
+  font-size: 1.5rem;
+  padding-bottom: 3rem;
+}
+.direita{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  background-color: white;
+  color: black;
+}
