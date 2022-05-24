@@ -169,10 +169,14 @@ footer{
    padding-left: 4rem;
    padding-right: 4rem;
    background-color: black;
-   margin-left: 7rem;
+   background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190429/pngtree-black-triangle-background-image_109967.jpg);
+  
  }
 .main-contato{
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .p1{
   padding: 0rem;
@@ -193,10 +197,13 @@ footer{
   padding-bottom: 3rem;
 }
 .direita{
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items:baseline;
+  padding-top: 18.4rem;
+  padding-bottom: 18.4rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
   background-color: white;
   color: black;
 }
