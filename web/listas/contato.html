@@ -1,88 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <script src="https://kit.fontawesome.com/cb007dbd74.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="listas.css">
-  <title>contato</title>
-</head>
-<body>
-  <header>
-    <div class="logo">
-      <img src="./assets/logo-frutaria.png" alt="logo frutaria"width="80">
-    </div>
-  <ul>
-      <li>
-        <a href="listas.html">
-          <h3>home</h3>
+    <script
+      src="https://kit.fontawesome.com/cb007dbd74.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="listas.css" />
+    <title>contato</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="./assets/logo-frutaria.png" alt="logo frutaria" width="80" />
+      </div>
+      <ul>
+        <li>
+          <a href="listas.html">
+            <h3>home</h3>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>contato</h3>
+          </a>
+        </li>
+        <li>
+          <a href="sobrenos.html">
+            <h3>sobre nós</h3>
+          </a>
+        </li>
+      </ul>
+    </header>
+
+    <main class="main-contato">
+      <div class="esquerda">
+        <p class="p1">
+          <i class="fa-solid fa-location-dot"></i>
+          endereço
+        </p>
+        <p class="p2">Rua do posto nº32. Na esquina</p>
+
+        <p class="p1">
+          <i class="fa-solid fa-phone"></i>
+          Vamos conversar
+        </p>
+        <p class="p3">(46) 99999-9999</p>
+
+        <p class="p1">
+          <i class="fa-solid fa-envelope"></i>
+          Suport geral
+        </p>
+        <p class="p3">newdev@gmail.com</p>
+      </div>
+      <div class="direita">
+        <h1>mande seu formulario</h1>
+
+        <form>
+          <label for="name"> Nome: </label>
+          <input id="name" type="text" autocomplete="off" placeholder="Ex. João da Silva"
+          required>
+          
+          <label for="email">Email:</label>
+          <input id="email" type="text" autocomplete="off">
+
+          <label for="mensagem">mensagem:</label>
+          <input id="mensagem" type="text" autocomplete="off" >
+          <input type="checkbox">
+          <input type="radio">
+          <input type="range">
+          <button id="buttonsendmessege">enviar!</button>
+          
+        </form>
+        
+
+        
+      </div>
+    </main>
+
+    <footer>
+      <section class="social">
+        <a href="http://instagram.com/" target="_blank">
+          <i class="fa-brands fa-instagram fa-2x"></i>
         </a>
-      </li>
-      <li>
-        <a href="#">
-          <h3>contato</h3>
+        <a href="http://facebook.com/" target="_blank">
+          <i class="fa-brands fa-facebook-square fa-2x"></i>
         </a>
-      </li>
-      <li>
-        <a href="sobrenos.html">
-          <h3>sobre nós</h3>
+        <a href="http://twitter.com/" target="_blank">
+          <i class="fa-brands fa-twitter fa-2x"></i>
         </a>
-      </li>
-    </ul>
-  </header>
+      </section>
 
-  <main class="main-contato">
-    
-    <div class="esquerda">
-      
-      <p class="p1">
-        <i class="fa-solid fa-location-dot"></i>
-        endereço</p>
-      <p class="p2">Rua do posto nº32. Na esquina</p>
-
-      <p class="p1">
-        <i class="fa-solid fa-phone"></i>
-        Vamos conversar</p>
-      <p class="p3">(46) 99999-9999</p>
-
-      <p class="p1">
-        <i class="fa-solid fa-envelope"></i>
-        Suport geral</p>
-      <p class="p3">newdev@gmail.com</p>
-
-    </div>
-    <div class="direita">
-        <p>mande seu formulario</p>
-        <h1>formulario</h1>
-
-        <button>mandar formulario</button>
-
-    </div>
-
-
-  </main>
-
-
-  <footer>
-    <section class="social">
-      <a href="http://instagram.com/" target="_blank">
-      <i class="fa-brands fa-instagram fa-2x"></i>
-      </a>
-      <a href="http://facebook.com/" target="_blank">
-      <i class="fa-brands fa-facebook-square fa-2x"></i>
-      </a>
-      <a href="http://twitter.com/" target="_blank">
-      <i class="fa-brands fa-twitter fa-2x"></i>
-      </a>
-    </section>
-
-    <p>newdev todos &reg; os direitos reservados</p>
-    <a href="#"><i class="fa-solid fa-arrow-up fa-3x"></i></a>
-  </footer>
-</body>
+      <p>newdev todos &reg; os direitos reservados</p>
+      <a href="#"><i class="fa-solid fa-arrow-up fa-3x"></i></a>
+    </footer>
+    <script src="main.js"></script>
+  </body>
 </html>

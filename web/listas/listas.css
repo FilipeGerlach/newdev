@@ -164,10 +164,12 @@ footer{
    padding: 1rem;
  }
  .esquerda{
-   padding-top: 10rem;
-   padding-bottom: 10rem;
-   padding-left: 4rem;
-   padding-right: 4rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+  min-width: 45rem;
+  min-height: 60rem;
    background-color: black;
    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190429/pngtree-black-triangle-background-image_109967.jpg);
   
@@ -199,11 +201,47 @@ footer{
 .direita{
   display: flex;
   flex-direction: column;
-  align-items:baseline;
-  padding-top: 18.4rem;
-  padding-bottom: 18.4rem;
-  padding-left: 6rem;
-  padding-right: 6rem;
+  align-items:center;
+  min-width: 45rem;
+  min-height: 60rem;
   background-color: white;
   color: black;
+  
 }
+.main-contato button:last-child{
+  color: gray;
+  height: 2.5rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  border: 1px solid gray;
+  border-radius: 2rem;
+  
+}
+.main-contato button:hover{
+  color: black;
+  height: 2.5rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  border: 1px solid black;
+  border-radius: 2rem;
+  background-color: gray;
+  cursor: pointer;
+}
+.direita form{
+  display: grid;
+  margin-top: 10rem;
+}
+.direita h1{
+  margin-top: 5rem;
+  font-weight: 300;
+}
+.direita input{
+  border-radius: 1rem;
+  border: 1px solid gray;
+  
+}
+.direita input:focus-visible{
+  border: 1px solid rgb(255, 69, 69);
+}
+
+
