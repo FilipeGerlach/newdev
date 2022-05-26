@@ -1,61 +1,27 @@
-// javascript é uma linguagem de programação
+const buttonSendMessege = document.getElementById('buttonsendmessege');
 
-// POO programação orientada à objetos
-// aatributos e metodos (funçoes)
 
-//exemplo de atributos: cor, largura, altura, etc.
-//exemplos de métodos/funções:frear, acelerar, virarADireita
+const messages = [];
 
-// A convenção de declaração de variavel deve ser seguida:
-
-// variavel NÃO PODE iniciar com numeros
-
-//variavel NÃo PODE iniciar com caracteres especiais(*, &, %)
-
-// variavel NÃO PODE iniciar com caixa ALTA: exemplo errado:Banana
-// exemplo correto: banana
-
-// variavel não pode ter acento
-
-// variaveis devem possuir um valor semantico(FAZER SENTIDO)
-// exemplo ruim: banana, a, b, c, n1, n2
-// exemplo bom: numeroParcelas, nomeUsuario
-
-// por convenção é possivel declarar constantes e que possuem escopo global de caixa alta, somente 
-// nesses casos
-const NUMERO = 2;
-
-//funções devem seguir as mesmas convenções as mesmas devem ter valor semantico
-
-/*   exemplos    */ 
-
-let nomeVariavel = 1
-let numeroParcelas = 200;
-
-//primeiro metodo de criar uma função, atribui-la a uma variavel
-let somaValores = function(){
-  console.log('somando valores');
-
-}
-
-// chamar/invocar/conjurar/acionar
-somaValores();
-
-// segundo método named function 
-function subtraiValores(){
-  console.log('subtrai');
-}
-subtraiValores();
-
-// terceiro método 
-const carro = {
-  cor:'vermelho',
-  andar: function(){
-    console.log('andando')
+function addMessage(event) {
+  event.preventDefault();//desabilita a função padrao do elemento
+  const inputName = document.getElementById('name');
+  const inputEmail = document.getElementById('email');
+  const inputMessage = document.getElementById('mensagem');
+  
+  
+  const message = {
+    name: inputName.value,
+    email:inputEmail.value,
+    message:inputMessage.value,
   }
 
+  messages.push(message);
+
+  document.getElementById('formu').reset();
+  console.log('...', message);
+  console.log('...', messages);
 }
 
-carro.andar();
-
+buttonSendMessege.addEventListener('click', addMessage);
 
