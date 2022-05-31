@@ -1,5 +1,10 @@
 const buttonAddMessege = document.getElementById('addButton')
+let countRow = 0;
 
+
+function onClickEdit(idRecord) {
+  console.log('Chamou a função editar', idRecord)
+}
 
 function addMessege(event) {
   event.preventDefault();
@@ -31,13 +36,13 @@ function addMessege(event) {
   }
   console.log('...', message);
 
-  const sessionMessages =
+ /*  const sessionMessages =
     document.getElementById('section-messages');
     
     // buscamos uma lista não ordenada dentro da seção para validar
     //se tem ou nao uma la dentro se não criamos ela
     
-    let ul = sessionMessages.querySelector('ul');
+   let ul = sessionMessages.querySelector('ul');
     
     if (!ul){
     //criamos uma lista nãop ordenada
@@ -52,6 +57,54 @@ function addMessege(event) {
   `De: ${message.from} 
   para: ${message.to} 
   mensagem: ${message.message}`
-  ul.appendChild(li);
+  ul.appendChild(li);*/
+
+
+const tbody= document.getElementById('tbody-messages')
+
+const tr = document.createElement('tr');
+
+const tdFrom = document.createElement('td');
+tdFrom.innerHTML = message.from;
+
+const tdTo = document.createElement('td');
+tdTo.innerHTML = message.to;
+
+const tdMessage = document.createElement('td');
+tdMessage.innerHTML = message.Message;
+
+tr.appendChild(tdFrom);
+tr.appendChild(tdTo);
+tr.appendChild(tdMessage);
+
+const tdButtons = document.createElement('td');
+
+const onClickEdit = function () {
+  console.log('Chamou afunção editar')
+}
+
+const iconEdit = document.createElement('i');
+iconEdit.setAttribute('class', 'fas fa-edit');
+iconEdit.setAttribute('style', 'cursor:pointer');
+tdButtons.appendChild(iconEdit);
+
+
+const iconRemove = document.createElement('i');
+iconRemove.setAttribute('class', 'fas fa-trash');
+iconRemove.setAttribute('style', 'cursor:pointer');
+tdButtons.appendChild(iconRemove);
+tr.appendChild(tdButtons);
+
+
+
+//precissamos identificar a linha.
+
+tr.setAttribute('id', countRow);
+countRow += 1;
+
+tbody.appendChild(tr);
+iconEdit.setAttribute('onclick', `onClickEdit(${tdButtons.parentElement.id});`)
+
+
 }
 buttonAddMessege.addEventListener('click', addMessege);
