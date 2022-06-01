@@ -1,42 +1,69 @@
-const buttonAddMessege = document.getElementById('addButton')
-let countRow = 0;
+const buttonAddMessage = document.getElementById('addButton')
+let countRow = 0
+let lineEditingInMoment = null
 
+function onClickEdit(lineEditing) {
+  lineEditingInMoment = lineEditing
+  //forEach é um metodo que percorre todos os indices do arreio
+  /*lineEditing.childNodes.forEach((valor,index)=>{
+  console.log('valor: ', valor);
+  console.log('index: ', index);
+  })
+  */
+  /*const fromValue = lineEditing.childNodes[0].innerHTML
+ console.log('from value:', fromValue)
+  const tbody = document.getElementById('tbody-messages')
+  const toValue = lineEditing.childNodes[1].innerHTML
+  console.log('to value:', toValue)
+  const messageValue = lineEditing.childNodes[2].innerHTML
+  console.log('message value:', messageValue)*/
 
-function onClickEdit(idRecord) {
-  console.log('Chamou a função editar', idRecord)
+  //desestruturação de arrays(vetores)
+  const [from, to, message] = lineEditing.childNodes
+
+  document.getElementById('from').value = from.innerHTML
+  document.getElementById('to').value = to.innerHTML
+  document.getElementById('message').value = message.innerHTML
+
+  
+}
+function onClickRemove(lineToRemove){
+ lineToRemove.remove();  
 }
 
-function addMessege(event) {
-  event.preventDefault();
-  const inputFrom = document.getElementById('from');
-  const inputTo = document.getElementById('to');
-  const textArea = document.getElementById('message');
 
-  if (!inputFrom.value.length){
+
+
+function addMessage(event) {
+  event.preventDefault()
+  const inputFrom = document.getElementById('from')
+  const inputTo = document.getElementById('to')
+  const textArea = document.getElementById('message')
+
+  if (!inputFrom.value.length) {
     alert('o remetente deve ser informado')
-    return;
+    return
   }
-  if (!inputTo.value.length){
+  if (!inputTo.value.length) {
     alert('o destinatario deve ser informado')
-    return;
+    return
   }
 
-  textArea.value = textArea.value.trim();
+  textArea.value = textArea.value.trim()
 
-  if (!textArea.value.length){
+  if (!textArea.value.length) {
     alert('a mensagem deve ser informado deve ser informado')
-    return;
+    return
   }
-
 
   const message = {
     from: inputFrom.value,
     to: inputTo.value,
-    message: textArea.value,
+    message: textArea.value
   }
-  console.log('...', message);
+  console.log('...', message)
 
- /*  const sessionMessages =
+  /*  const sessionMessages =
     document.getElementById('section-messages');
     
     // buscamos uma lista não ordenada dentro da seção para validar
@@ -49,8 +76,7 @@ function addMessege(event) {
     ul = document.createElement('ul');
     //adiciona dentro da seção
     sessionMessages.appendChild(ul);
-  }
-  document.getElementById('form-message').reset();
+  } 
 
   const li = document.createElement('li');
   li.innerHTML = 
@@ -59,52 +85,78 @@ function addMessege(event) {
   mensagem: ${message.message}`
   ul.appendChild(li);*/
 
+  const tbody = document.getElementById('tbody-messages')
 
-const tbody= document.getElementById('tbody-messages')
+  const tr = document.createElement('tr')
 
-const tr = document.createElement('tr');
+  const tdFrom = document.createElement('td')
+  tdFrom.innerHTML = message.from
 
-const tdFrom = document.createElement('td');
-tdFrom.innerHTML = message.from;
+  const tdTo = document.createElement('td')
+  tdTo.innerHTML = message.to
 
-const tdTo = document.createElement('td');
-tdTo.innerHTML = message.to;
+  const tdMessage = document.createElement('td')
+  tdMessage.innerHTML = message.message
 
-const tdMessage = document.createElement('td');
-tdMessage.innerHTML = message.Message;
+  tr.appendChild(tdFrom)
+  tr.appendChild(tdTo)
+  tr.appendChild(tdMessage)
 
-tr.appendChild(tdFrom);
-tr.appendChild(tdTo);
-tr.appendChild(tdMessage);
+  const tdButtons = document.createElement('td')
 
-const tdButtons = document.createElement('td');
+  const iconEdit = document.createElement('i')
+  iconEdit.setAttribute('class', 'fas fa-edit')
+  iconEdit.setAttribute('title', 'editar')
+  iconEdit.setAttribute('style', 'cursor:pointer; margin-inline: 1rem')
+  tdButtons.appendChild(iconEdit)
 
-const onClickEdit = function () {
-  console.log('Chamou afunção editar')
+  const iconRemove = document.createElement('i')
+  iconRemove.setAttribute('class', 'fas fa-trash')
+  iconRemove.setAttribute('title', 'remover')
+  iconRemove.setAttribute('style', 'cursor:pointer; margin-inline: 1rem')
+  tdButtons.appendChild(iconRemove)
+  tr.appendChild(tdButtons)
+
+  const iconArrowDown = document.createElement('i')
+  iconArrowDown.setAttribute('class', 'fas fa-arrow-down')
+  iconArrowDown.setAttribute('title', 'flecha para baixo')
+  iconArrowDown.setAttribute('style', 'cursor:pointer; margin-inline: 1rem')
+  tdButtons.appendChild(iconArrowDown)
+  tr.appendChild(tdButtons)
+
+  const iconArrowUp = document.createElement('i')
+  iconArrowUp.setAttribute('class', 'fas fa-arrow-up')
+  iconArrowUp.setAttribute('title', 'flecha para cima')
+  iconArrowUp.setAttribute('style', 'cursor:pointer; margin-inline: 1rem')
+  tdButtons.appendChild(iconArrowUp)
+  tr.appendChild(tdButtons)
+
+  //precissamos identificar a linha.
+
+  tr.setAttribute('id', `line${countRow}`)
+  countRow += 1
+  if(lineEditingInMoment){
+    console.log('essa linha já existe', lineEditingInMoment)
+    const[fromToUpdate, toToUpdate, messageToUpdate] = lineEditingInMoment.childNodes;
+
+    fromToUpdate.innerHTML = message.from;
+    toToUpdate.innerHTML = message.to;
+    messageToUpdate.innerHTML = message.message;
+    lineEditingInMoment = null
+  }else{
+    tbody.appendChild(tr)
+  }
+  iconEdit.setAttribute(
+    'onclick',
+    `onClickEdit(${tdButtons.parentElement.id});`
+  )
+  iconRemove.setAttribute(
+    'onclick',
+    `onClickRemove(${tdButtons.parentElement.id});`
+  )
+ 
+
+  document.getElementById('form-message').reset()
 }
 
-const iconEdit = document.createElement('i');
-iconEdit.setAttribute('class', 'fas fa-edit');
-iconEdit.setAttribute('style', 'cursor:pointer');
-tdButtons.appendChild(iconEdit);
-
-
-const iconRemove = document.createElement('i');
-iconRemove.setAttribute('class', 'fas fa-trash');
-iconRemove.setAttribute('style', 'cursor:pointer');
-tdButtons.appendChild(iconRemove);
-tr.appendChild(tdButtons);
-
-
-
-//precissamos identificar a linha.
-
-tr.setAttribute('id', countRow);
-countRow += 1;
-
-tbody.appendChild(tr);
-iconEdit.setAttribute('onclick', `onClickEdit(${tdButtons.parentElement.id});`)
-
-
-}
-buttonAddMessege.addEventListener('click', addMessege);
+buttonAddMessage.addEventListener('click', addMessage)
