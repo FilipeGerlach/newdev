@@ -3,7 +3,7 @@ let countRow = 0
 let lineEditingInMoment = null
 let indexRow;
 
-
+//manifesto, service workers, armazenamento
 
 function onClickEdit(lineEditing) {
   lineEditingInMoment = lineEditing
