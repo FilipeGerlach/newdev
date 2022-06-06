@@ -3,35 +3,51 @@
   box-sizing: border-box;
   padding: 0;
 }
-
+html {
+  height: 100%;
+  background-image: url(https://img.freepik.com/vetores-gratis/fundo-branco-e-cinza-com-padrao-de-linhas-diagonais_1017-25100.jpg?w=2000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 html,
 body {
   font-family: 'Roboto', sans-serif;
   height: 100%;
+  background-color: white;
 }
 :root {
   font-size: 62.5%;
 }
 body {
   display: flex;
-  background-color: #e2e2e2;
+  background-color: white;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   font-size: 1.6rem;
+
+  width: 80%;
 }
 header {
   padding: 3rem;
   font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
+  
 }
-main{
+main {
   padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid black;
 }
-h3{
+h3 {
   margin-top: 3rem;
 }
-.send{
+.send {
   text-transform: uppercase;
   color: white;
   background-color: green;
@@ -40,7 +56,13 @@ h3{
   height: 3rem;
   border-radius: 2rem;
 }
-.clear{
+.send:hover {
+  text-transform: uppercase;
+  color: green;
+  background-color: white;
+  border: 1px solid green;
+}
+.clear {
   text-transform: uppercase;
   color: white;
   background-color: red;
@@ -49,16 +71,29 @@ h3{
   height: 3rem;
   border-radius: 2rem;
 }
-input{
+.clear:hover {
+  text-transform: uppercase;
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+}
+input {
   margin-bottom: 1rem;
   height: 2.5rem;
-  
 }
-footer{
+footer {
   margin-top: 3rem;
 }
-i{
+i {
   margin-right: 0.5rem;
   margin-left: 0.5rem;
 }
-
+.fa-reddit-square {
+  color: orangered;
+}
+.fa-github-square {
+  color: black;
+}
+.fa-linkedin {
+  color: rgb(57, 57, 245);
+}
