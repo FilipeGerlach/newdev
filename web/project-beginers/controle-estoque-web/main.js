@@ -1,94 +1,68 @@
-cars = []
-
+let cars = []
+let totalQuantity = 0;
 const loadCars = () => {
   const carrosJaArmazenados = localStorage.getItem('listCars')
   return carrosJaArmazenados ? JSON.parse(carrosJaArmazenados) : []
 }
-const onClickEdit = (element) => {
-  const identificadorASerEncontrado = 
-    element.getAttribute('identificador');
 
-  identificadorQueTaSendoEditado = +identificadorASerEncontrado;
+const addEntry = event => {
+  event.preventDefault()
+
+  cars = loadCars()
   
-  const cars = loadCars();
-  console.log('cars', cars);
-  let carFound = {
-    brand: '',
-    type: '',
-    age: ''
-  };
-
-  cars.forEach((car, identificador) => {
-    if (identificador === +identificadorASerEncontrado) {
-      carFound.brand = car.brand;
-      carFound.type = car.type;
-      carFound.age = car.age;
+  cars.forEach((item, index) => {
+    if (+document.getElementById('code').value === index) {
+      if(document.getElementById('entry').value === 'E'){
+        if(totalQuantity + +document.getElementById('quantity').value <= 200){
+          item.quantity += +document.getElementById('quantity').value
+          totalQuantity +=  +document.getElementById('quantity').value
+          console.log('quantidade', totalQuantity)
+          document.querySelector('form').reset()
+        }
+        else{
+          alert('o estoque passou de 200')
+          
+          document.querySelector('form').reset()
+        }
+      }
+      else{
+        console.log('quantidade', totalQuantity)
+        item.quantity -= +document.getElementById('quantity').value
+        totalQuantity -=  +document.getElementById('quantity').value
+        document.querySelector('form').reset()
+      }
     }
-  });
-
-  document.getElementById('brand').value = carFound.brand;
-  document.getElementById('type').value = carFound.type;
-  document.getElementById('age').value = carFound.age;
-
-  console.log('carFound', carFound);
-}
-const salvarRegistroEditado = (registroSendoEditado) => {
-  const cars = loadPeoples();
-  const carAtualizado = cars.map((car, index) => { 
-    if (identificadorQueTaSendoEditado === index) {
-      car.brand = registroSendoEditado.brand;
-      car.type = registroSendoEditado.type;
-      car.age = registroSendoEditado.age;
-    }
-    return car;
   })
-
-  localStorage.setItem('listaDeCarros', JSON.stringify(carAtualizado));
-
-  identificadorQueTaSendoEditado = null;
-
-  listCars();
-  document.querySelector('form').reset();
-}
-const span = (identificador) => {
-  const span = document.createElement('span');
-  const iconEdit = document.createElement('i');
-  iconEdit.setAttribute('class', 'fas fa-edit');
-  iconEdit.setAttribute('title', 'Editar');
-  iconEdit.setAttribute('identificador', `${identificador}`);
-  iconEdit.setAttribute('onclick', `onClickEdit(this)`);
-  iconEdit.setAttribute('style', 'cursor:pointer; margin-inline: 1rem;');
-
-  span.appendChild(iconEdit);
   
-  return span;
-} 
-
-if (document.getElementById('list-section')) {
-  const listCars = () => {
-    const cars = loadCars()
-
-    let ul = document.querySelector('ul')
-    if (ul) {
-      ul.remove()
-    }
-
-    ul = document.createElement('ul')
-
-    cars.forEach((item, index) => {
-      const li = document.createElement('li')
-      li.innerHTML = `código: ${index} marca: ${item.brand} 
-      tipo: ${item.type}, 
-      ano: ${item.age}
-     `
-      li.appendChild(span())
-      ul.appendChild(li)
-    })
-    console.log(document.getElementById('list-section'))
-    document.getElementById('list-section').appendChild(ul)
-  }
-  listCars()
+  localStorage.setItem('listCars', JSON.stringify(cars))
+  listCars();
 }
+
+const listCars = () => {
+  const cars = loadCars()
+
+  let ul = document.querySelector('ul')
+  if (ul) {
+    ul.remove()
+  }
+
+  ul = document.createElement('ul')
+
+  cars.forEach((item, index) => {
+    const li = document.createElement('li')
+    li.innerHTML = `código: ${index} 
+      marca: ${item.brand} 
+      tipo: ${item.type} 
+      ano: ${item.age}
+      quantidade: ${item.quantity}
+     `
+
+    ul.appendChild(li)
+  })
+  console.log(document.getElementById('list-section'))
+  document.getElementById('list-section').appendChild(ul)
+}
+listCars()
 
 const addCar = event => {
   event.preventDefault()
@@ -96,9 +70,12 @@ const addCar = event => {
   const car = {
     brand: document.getElementById('brand').value,
     type: document.getElementById('type').value,
-    age: document.getElementById('age').value
+    age: document.getElementById('age').value,
+    quantity: 0
   }
+
   cars = loadCars()
+
   cars.push(car)
 
   localStorage.setItem('listCars', JSON.stringify(cars))
@@ -109,9 +86,10 @@ const addCar = event => {
   }
 }
 
+const buttonMovimentacao = document.getElementById('buttonAdd')
 const buttonAddCar = document.getElementById('buttonForm')
 
+buttonMovimentacao.addEventListener('click', addEntry)
 if (buttonAddCar) {
   buttonAddCar.addEventListener('click', addCar)
 }
-
