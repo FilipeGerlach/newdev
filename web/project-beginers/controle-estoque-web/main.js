@@ -1,5 +1,5 @@
 let cars = []
-let totalQuantity = 0;
+let totalQuantity = 0
 const loadCars = () => {
   const carrosJaArmazenados = localStorage.getItem('listCars')
   return carrosJaArmazenados ? JSON.parse(carrosJaArmazenados) : []
@@ -9,37 +9,35 @@ const addEntry = event => {
   event.preventDefault()
 
   cars = loadCars()
-  
+
   cars.forEach((item, index) => {
     if (+document.getElementById('code').value === index) {
-      if(document.getElementById('entry').value === 'E'){
-        if(totalQuantity + +document.getElementById('quantity').value <= 200){
+      if (document.getElementById('entry').value === 'E') {
+        if (totalQuantity + +document.getElementById('quantity').value <= 200) {
           item.quantity += +document.getElementById('quantity').value
-          totalQuantity +=  +document.getElementById('quantity').value
+          totalQuantity += +document.getElementById('quantity').value
           console.log('quantidade', totalQuantity)
           document.querySelector('form').reset()
-        }
-        else{
+        } else {
           alert('o estoque passou de 200')
-          
+
           document.querySelector('form').reset()
         }
-      }
-      else{
+      } else {
         console.log('quantidade', totalQuantity)
         item.quantity -= +document.getElementById('quantity').value
-        totalQuantity -=  +document.getElementById('quantity').value
+        totalQuantity -= +document.getElementById('quantity').value
         document.querySelector('form').reset()
       }
     }
   })
-  
+
   localStorage.setItem('listCars', JSON.stringify(cars))
-  listCars();
+  listCars()
 }
 
-const listCars = () => {
-  const cars = loadCars()
+const listCars = carsParams => {
+  const cars = carsParams ? carsParams : loadCars()
 
   let ul = document.querySelector('ul')
   if (ul) {
@@ -85,6 +83,16 @@ const addCar = event => {
     listCars()
   }
 }
+
+const inputValue = document.getElementById('search')
+inputValue.addEventListener('keyup', function () {
+  cars = loadCars()
+
+  const carsFilter = cars.filter(item => item.brand.includes(inputValue.value))
+  console.log('funcionou?', carsFilter)
+
+  listCars(carsFilter)
+})
 
 const buttonMovimentacao = document.getElementById('buttonAdd')
 const buttonAddCar = document.getElementById('buttonForm')
