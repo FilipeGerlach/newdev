@@ -1,0 +1,85 @@
+/*
+desenvolvimento web: 
+	fRONT-END:
+		html, css, javaScript
+
+		html é a linguagem de marcação
+		CSS é a linguagem de estilo
+		javaScript é a linguagem de programação
+
+		o HTML e o CSS juntos dao a aparencia(maqueiam)a pagina web.
+		o JS interações com a pagina, da vida aos botões aos inputs. Toda interação visual que o 
+usuario tem com a pagina. 
+		
+	
+
+	existem servidores provendo recursos: podendo ser back-end e front-end:imagem, html, arquivos em geral.
+
+	A comunicação é feita através do protocolo http(https)
+	O https possui um nivel de segurança que é utilizando certificados SSL que criptografa as informações durante
+a trasferrencia
+	
+
+	JS- linguagem de prgramação:
+		POO:programação orientada a bojetos.
+		classe: Propriedades/atributos metodos
+			exemplo: fruta: nome, tamanho, valor, sabor.
+		
+		objetos:objeto é a instancia de uma classe. 
+			exemplo: const fruta1 ={
+				nome:'banana',
+				tamanho:2cm
+				}
+			metodos/funções
+			funções podem receber parametros, eles são opcionais, funções podem retornar algum valor.
+			function estaMaduro(tempo) {
+				if(tempo >= 2) {
+					return true;
+				}else{
+				return false;
+				}
+			
+			}
+			como declarar uma arrow function:
+			const minhaFuncao = () =>{
+			}
+o escoo de uma função é de onde ela inicia até onde ela termina 
+
+arrays(vetor)
+  aprendemos trabalhar com arrays, com os seguintes metodos:
+    .forEach: percorre cada elemento do array, dispanado uma função, que recebe dois parametros
+    no primeiro paramentro recebe o elemento que esta armazenado
+    e no segundo posição e indice do array onde esta armazenado o elemento.
+  
+    .push: adiciona um elemento ao final do array.
+    .indexOf: procura e retorna o indice dentro do array.
+    .splice: remove um ou mais itens de um array de acordo com os parametros passados para a função
+    o primeiro é a osição inicial da qual deseja iniciar a remoção, e a segunda é a quantidade que quer remover a partir do parametro inicial.
+    .filter: ele retorna o elemento que satisfaz a condição que é realizada dentro da função.
+    .map: retorna um novo vetor, copiando o antigo.
+    .includes: retorna true or false, se o parametro passado a ele atende  a condição.
+
+
+  manipulação da DOM:
+  o que é DOM? é o documento (Document Object Model)
+  adicionar eventos  dentro da DOM, atraves de inputs, botões elementos.
+  
+  addEventListener('click', funcão de callback)
+
+  procurar elementos dentro da DOM:
+  .getElementById('') : procura elemento pelo id.
+  .querySelector('') : pega o primeiro elemento que ele encontrar. ex: tagname, id, class.
+  .querySelectorAll('') : procura todos os elementos e retorna um node list que é um vetor de elementos html.
+
+  criar elmentos HTML de forma dinamica: 
+    .createElement(): cria um elemento HTML;
+
+    .appendChild(): cria um elemento filho dentro do elemento pai.
+    (childNode e parentNode)
+
+  manipular os elemnetos htmnl, adicionando atributos, alterando atributos, pegar valores dos atributos
+
+  storage: localStorage
+
+
+	BACK-END:fornece dados */

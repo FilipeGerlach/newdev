@@ -2,7 +2,7 @@ let counter = 0;
 
 
 
-  document.getElementById('game').addEventListener('click', () => {  
+  document.getElementById('game').addEventListener('click', (event) => {  
   
     
     if(counter % 2 == 0) {
@@ -18,6 +18,7 @@ let counter = 0;
     if(document.getElementById('1').innerHTML === 'O' & document.getElementById('2').innerHTML === 'O' & document.getElementById('3').innerHTML === 'O' || document.getElementById('4').innerHTML === 'O' & document.getElementById('5').innerHTML === 'O' & document.getElementById('6').innerHTML === 'O'||  document.getElementById('7').innerHTML === 'O' & document.getElementById('8').innerHTML === 'O' & document.getElementById('9').innerHTML === 'O' ||  document.getElementById('1').innerHTML === 'O' & document.getElementById('4').innerHTML === 'O' & document.getElementById('7').innerHTML === 'O'|| document.getElementById('2').innerHTML === 'O' & document.getElementById('5').innerHTML === 'O' & document.getElementById('8').innerHTML === 'O' || document.getElementById('3').innerHTML === 'O' & document.getElementById('6').innerHTML === 'O' & document.getElementById('9').innerHTML === 'O' || document.getElementById('1').innerHTML === 'O' & document.getElementById('5').innerHTML === 'O' & document.getElementById('9').innerHTML === 'O' || document.getElementById('3').innerHTML === 'O' & document.getElementById('5').innerHTML === 'O' & document.getElementById('7').innerHTML === 'O'){
       alert('voce ganhou bolinha')
     }
+    
 
     
     counter += 1;
