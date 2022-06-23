@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  font-family: 'Fira Code', monospace;
+  height: 100%;
+  background-image: url(https://claudiaganhao.pt/wp-content/uploads/2019/05/Dicas-para-Single-Task-770x510.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+  background-color: white;
+  padding: 5rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  background-color: rgb(38, 151, 38);
+  border: 1px solid black;
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+}
+button:hover{
+  background-color: black;
+  border: 1px solid rgb(38, 151, 38);
+  color: rgb(38, 151, 38);
+
+}
+ul{
+  align-items: flex-start;
+}
+li{
+  list-style: none;
+  margin-bottom: 0.2rem;
+}
+i{
+  margin-left: 1rem;
+}
+input{
+  margin-left: 0.5rem;
+}
+section{
+  margin-bottom: 2rem;
+}
