@@ -1,0 +1,15 @@
+{
+  "name": "read-file",
+  "version": "0.0.0",
+  "description": "",
+  "main": "list-file.js",
+  "scripts": {
+    "dev": "npx nodemon list-file.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
