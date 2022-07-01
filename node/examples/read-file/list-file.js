@@ -1,19 +1,54 @@
-const http = require('http')
-const URL= require('url')
-const users = require('./users.json')
+const http = require('http');
+const URL = require('url');
+const fs = require('fs');
+const path = require('path');
+let users = require('./users.json');
 
-
-http
-  .createServer((request, response) => {
-    //responde pro cliente
-    const {name, lastname, age} = URL.parse(request.url, true).query
-    if(name || lastname || age){
-      console.log('query',name, lastname, age)
-      
+const getUsers = (request, response) => {
+  const { name, lastName, age, remove } = URL.parse(request.url, true).query;
+  let message = '';
+  
+  if (name) {    
+    const user = {
+      name, lastName, age
     }
+    if (remove) {
+      const found = users.filter(user => String(user.name) == String(name))
+      users = users.filter(user => String(user.name) !== String(name));
+      message = 'messagem removida com sucesso'
+     
+      if(!found.length){
+        return response.end('Não foi encontrado')
+        
+      }
 
-    response.end(JSON.stringify(users))
-  })
-  .listen(3001, () => {
-    console.log('API is running on port 3001')
-  })
+    } else {
+      users.push(user);
+      message = 'salvou o registro com sucesso'
+    }
+      
+    fs.writeFile(
+      path.join(__dirname, 'users.json'),
+      JSON.stringify(users, null, 2),
+      (error) => {
+        if (error) return;
+
+        console.log('Salvou o registro com sucesso');
+        response.end(JSON.stringify({
+          status: message,
+          data: user
+        }));
+      }
+    );
+  }else{
+    response.end(JSON.stringify(users));
+
+  }
+
+}
+
+const server = http.createServer(getUsers);
+
+server.listen(3001, () => {
+  console.log('API listening on http://localhost:3001');
+});
