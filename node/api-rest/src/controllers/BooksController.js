@@ -1,35 +1,74 @@
-exports.findAllBooks = (request, response) => {
-  const query = request.query
-  console.log('query books', query)
-  return response.status(200).send('acessando recurso/books METHOD: GET BOOKS')
+const database = require("../databases/knex")
+
+exports.findAllBooks = async(request, response) => {
+  try {
+    const sql = await database.select('*').from('books')
+
+    console.log('sql', sql)
+    return response.status(200).send(sql)
+  } catch (error) {
+    return response.status(500).send({error: error?.message || e})
+  }
 }
 
-exports.createBooks = (request, response) =>{
-  const query = request.query
-  console.log('query books', query)
-  return response.status(200).send('acessando recurso /books METHOD: POST BOOKS')
+exports.createBooks = async(request, response) =>{
+  try {
+    await database('books').insert(request.body)
+  
+    return response.status(200).send({status:'funcionou'})
+  } catch (error) {
+    return response.status(500).send({error: error?.message || e})
+  }
 }
 
-exports.getBooksById = (request, response) =>{
-  const params = request.params
-  console.log('putBooksById', params)
-  return response.status(200).send('acessando recurso /books METHOD: GET BOOKS BY ID')
+exports.getBooksById = async(request, response) =>{
+  try {
+    const params = request.params
+    const [getIdBooks] = await database.select('*').from('books').where({id:params.id}).limit(1)
+
+    if(!getIdBooks){
+      response.status(404).send('o registro não foi encontrado')
+    }
+    await database.select('*').from('books').where({id:params.id})
+
+    return response.status(200).send(getIdBooks)
+  } catch (error) {
+    return response.status(500).send({errpr: error?.message || e})
+  }
 }
 
-exports.deleteBooksById = (request, response) =>{
-  const params = request.params
-  console.log('deleteBooksById', params)
-  return response.status(200).send('acessando recurso /books METHOD: DELETE BOOKS BY ID')
+exports.deleteBooksById = async(request, response) =>{
+  try {
+    const params = request.params
+    const[deletebooks] = await database.select('*').from('books').where({id:params.id}).limit(1)
+
+    if(!deletebooks){
+      return response.status(404).send('recurso não encontrado')
+    }
+    console.log('excluir', deletebooks)
+    await database.delete({book:deletebooks.book}).from('books').where({id:deletebooks.id})
+
+
+  return response.status(200).send('foi excluido!!')
+  } catch (error) {
+    return response.status(500).send({error: error?.message || e})
+  }
 }
 
-exports.patchBooksById = (request,response) =>{
-  const params = request.params
-  console.log('patchBooksById', params)
-  return response.status(200).send('acessando recurso /books METHOD: PATCH BOOKS BY ID')
-}
 
-exports.putBooksById = (request,response) => {
-  const params = request.params
-  console.log('putBooksById', params)
-  return response.stauts(200).send('acessando recurso /books METHOD: PUT BOOKS BY ID')
+exports.putBooksById = async(request,response) => {
+  try {
+    const params = request.params
+    
+    const [putBooks] = await database.select('*').from('books').where({id:params.id}).limit(1)
+
+    if(!putBooks){
+      return response.status(404).send('não encontrado')
+    }
+    const newBook = request.body
+    await database.update({book:newBook.book}).from('books').where({id:putBooks.id})
+    return response.status(200).send({status:'registro salvo com secesso', data: request.body})
+  } catch (error) {
+    return response.status(500).send({error: error?.message || e})
+  }
 }
