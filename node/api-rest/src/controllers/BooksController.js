@@ -1,12 +1,20 @@
 const database = require("../databases/knex")
+const logger = require('../utils/logger')
 
 exports.findAllBooks = async(request, response) => {
   try {
-    const sql = await database.select('*').from('books')
+    const sql = await database.select(
+      ['books.id', 'books.book', 'authors.name as author Name']
+    ).from('books').innerJoin('authors', 'authors.id', 'books.authorId')
 
+      sql.forEach(authors =>{
+        console.log('-->', authors['author Name'])
+        
+      })
     console.log('sql', sql)
     return response.status(200).send(sql)
   } catch (error) {
+    logger(error.message)
     return response.status(500).send({error: error?.message || e})
   }
 }
@@ -17,6 +25,7 @@ exports.createBooks = async(request, response) =>{
   
     return response.status(200).send({status:'funcionou'})
   } catch (error) {
+    logger(error.message)
     return response.status(500).send({error: error?.message || e})
   }
 }
@@ -33,6 +42,7 @@ exports.getBooksById = async(request, response) =>{
 
     return response.status(200).send(getIdBooks)
   } catch (error) {
+    logger(error.message)
     return response.status(500).send({errpr: error?.message || e})
   }
 }
@@ -51,6 +61,7 @@ exports.deleteBooksById = async(request, response) =>{
 
   return response.status(200).send('foi excluido!!')
   } catch (error) {
+    logger(error.message)
     return response.status(500).send({error: error?.message || e})
   }
 }
@@ -69,6 +80,7 @@ exports.putBooksById = async(request,response) => {
     await database.update({book:newBook.book}).from('books').where({id:putBooks.id})
     return response.status(200).send({status:'registro salvo com secesso', data: request.body})
   } catch (error) {
+    logger(error.message)
     return response.status(500).send({error: error?.message || e})
   }
 }

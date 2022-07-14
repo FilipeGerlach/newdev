@@ -5,7 +5,7 @@ exports.findAll = async(request, response) =>{
   try {
     const sql = await database.select('*').from('authors');
 
-    console.log('sql ->', sqdawdwal)
+    
     return response.status(200).send(sql)
   } catch (error) {
     logger(error.message)

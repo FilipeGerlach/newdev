@@ -7,7 +7,7 @@ exports.up = function(knex) {
     
     table.increments();
     table.string('book');
-    table.string('authors')
+    
   })
 };
 
