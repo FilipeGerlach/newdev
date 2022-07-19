@@ -1,8 +1,9 @@
 const database = require('../databases/knex')
-const fieldValidator = require('../utils/fieldValidator')
-exports.findAllCourses = async (request, response) =>{
+const fieldValidatorInstructor = require('../utils/fieldValidator')
+
+exports.findAllInstructor = async (request, response) =>{
   try {
-    const sql = await database.select('*').from('course');
+    const sql = await database.select('*').from('instructor');
 
     return response.status(200).send(sql)
   } catch (error) {
@@ -12,25 +13,25 @@ exports.findAllCourses = async (request, response) =>{
   }
 }
 
-exports.getId = async(request, response)=>{
+exports.getInstructorId = async(request, response)=>{
   try {
     const params = request.params
-    const [getId] = await database.select('*').from('course').where({id:params.id}).limit(1)
+    const [getId] = await database.select('*').from('instructor').where({id:params.id}).limit(1)
 
     if(!getId){
       response.status(404).send('não foi encontrado')
     }
-    await database.select('*').from('course').where({id:params.id})
+    await database.select('*').from('instructor').where({id:params.id})
     return response.status(200).send(getId)
   } catch (error) {
     return response.status(500).send({error:error?.message || e})
   }
 }
 
-exports.createCourse = async(request, response)=>{
+exports.createInstructor = async(request, response)=>{
   
   try {
-    const invalidFields = fieldValidator(request.body, ['title', 'description'])
+    const invalidFields = fieldValidatorInstructor(request.body, ['fullName', 'avatarUrl'])
 
       if(invalidFields.length){
         return response.status(400).send({
@@ -40,13 +41,13 @@ exports.createCourse = async(request, response)=>{
       }
     
     
-    const [courseCreatedId] = await database.insert(request.body).into('course');
+    const [instructorCreatedId] = await database.insert(request.body).into('instructor');
     
-    const [courseCreated] = await database.select('*').from('course').where({ id: courseCreatedId });
+    const [instructorCreated] = await database.select('*').from('instructor').where({ id: instructorCreatedId });
 
     return response.status(200).send({
       status: 'success',
-      data: courseCreated
+      data: instructorCreated
     })
 
     
@@ -54,15 +55,15 @@ exports.createCourse = async(request, response)=>{
     return response.status(500).send({error:error?.message || e})
   }
 }
-exports.deleteCourse = async(request, response)=>{
+exports.deleteInstructor = async(request, response)=>{
   try {
     const params = request.params
-    const [excluir] = await database.select('*').from('course').where({id:params.id}).limit(1)
+    const [excluir] = await database.select('*').from('instructor').where({id:params.id}).limit(1)
 
     if(!excluir){
       return response.status(404).send('não encontrado')
     }
-    await database.delete({title:excluir.title}).from('course').where({id:excluir.id})
+    await database.delete({fullName:excluir.fullName}).from('instructor').where({id:excluir.id})
     return response.status(200).send({status:"deletado"})
     
   } catch (error) {
@@ -70,17 +71,17 @@ exports.deleteCourse = async(request, response)=>{
   }
 }
 
-exports.putCourse = async(request, response) =>{
+exports.putInstructor = async(request, response) =>{
   try {
     const params = request.params
 
-    const [previousCourse] = await database.select('*').from('course').where({id:params.id}).limit(1)
+    const [previousCourse] = await database.select('*').from('instructor').where({id:params.id}).limit(1)
 
     if(!previousCourse){
       return response.status(404).send('não doi encontrado')
     }
     
-    await database.update({title:request.body.title, description:request.body.description}).from('course').where({id:previousCourse.id})
+    await database.update({fullName:request.body.fullName, avatarUrl:request.body.avatarUrl}).from('instructor').where({id:previousCourse.id})
     
     return response.status(200).send({status:'registro salvo', data:request.body})
   } catch (error) {

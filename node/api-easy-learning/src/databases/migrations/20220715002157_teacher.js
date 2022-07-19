@@ -5,8 +5,8 @@
  exports.up = function(knex) {
   return knex.schema.createTable('instructor', function(table){
     table.increments();
-    table.string('title');
-    table.string('description');
+    table.string('fullName');
+    table.string('avatarUrl');
   })
 };
 
