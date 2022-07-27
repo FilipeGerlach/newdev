@@ -11,4 +11,8 @@ export class AppComponent {
   instagram: string = 'https://instagram.com'
   biografia: string = 'lore ipsum lore ipsumlore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsum lore ipsumlore ipsumlore ipsum lore ipsum lore ipsum lore ipsumlore ipsum'
   subtitle: string = 'sub titulo'
+
+  
+  
+
 }

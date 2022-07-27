@@ -2,8 +2,22 @@
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{subTitleText}}</h6>
-    <p class="card-text">{{bio}}</p>
+    <p [ngStyle]="{'color': color}" class="card-text">{{bio}}</p>
     <a href="{{linkYoutube}}" class="card-link">{{linkYoutube}}</a>
     <a href="{{linkInstagram}}" class="card-link">{{linkInstagram}}</a>
   </div>
+
+  <h2 *ngIf="author == 'filip'; else ehDoce">cajuzinho</h2>
+  <ng-template #ehDoce>
+    <h2>chocolate</h2>
+  </ng-template>
+
+  
+  <button (click)="addNameOnList()" class="btn btn-outline-primary">
+    adiciona
+  </button>
+  
+  <app-lista [listParam]="list" [removeParam]="remove"></app-lista>
+
+
 </div>
