@@ -8,6 +8,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { RoomComponent } from './components/room/room.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LessonComponent } from './components/lesson/lesson.component';
+import { VimeModule } from '@vime/angular';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,11 @@ import { LessonComponent } from './components/lesson/lesson.component';
     RoomComponent,
     SidebarComponent,
     LessonComponent
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    VimeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
