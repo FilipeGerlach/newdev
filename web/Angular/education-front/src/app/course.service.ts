@@ -31,4 +31,13 @@ export class CourseService {
     console.log('get couse by ID', data)
     return data
   }
+  async getCourse():Promise<CourseResponseType>{
+    const that = this;
+    const response = await fetch(`http://localhost:4000/courses`)
+
+    const data = await response.json() as CourseResponseType
+    
+    console.log('get couse', data)
+    return data
+  }
 }

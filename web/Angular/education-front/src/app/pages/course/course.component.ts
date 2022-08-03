@@ -9,6 +9,7 @@ import { CourseResponseType, CourseService } from 'src/app/course.service';
 export class CourseComponent implements OnInit {
   courseService: CourseService
   course: CourseResponseType
+  lessonToShow: any
 
   constructor(courseService: CourseService) {
     this.courseService = courseService
@@ -16,10 +17,13 @@ export class CourseComponent implements OnInit {
    }
 
   async ngOnInit(): Promise<void> {
-    this.course = await this.courseService.getCourseById(1)
+    this.course = await this.courseService.getCourseById(2)
     console.log(this.course)
     
 
+  }
+  async setLessonToShow(lesson: any){
+    this.lessonToShow = lesson
   }
 
 }

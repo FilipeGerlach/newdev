@@ -2,44 +2,33 @@
 <div class="flex-grow-1">
   <div class="d-flex justify-content center">
     <div class="h-100 w-100 container-video">
-      <vm-player controls>
-        <vm-video cross-origin="true" poster="https://media.vimejs.com/poster.png">
-          <source data-src="https://media.vimejs.com/720p.mp4" type="video/mp4" />
-          <track
-          default
-          kind="subtitles"
-          src="https://media.vimejs.com/subs/english.vtt"
-          srclang="en"
-          label="English"
-          />
-        </vm-video>
-      </vm-player>
+      <iframe width="790" height="444" src="https://www.youtube.com/embed/ysSJ_KtuHtI" title="DR0GAS, ÁLC00L E NOITADA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 
   <div class="p-4 mx-auto">
     <section class="d-flex aligm-item-center justify-content-between">
       <div class="flex-1">
-        <h1 class="text-2xl font-bold">
-          Título da aula
+        <h1 class="text-2xl font-bold" >
+          {{lessonParam?.title}}
         </h1>
 
-        <p class="mt-4 text-gray-200 leading-relaxed">
-          Descrição da aula!
+        <p class="mt-4 text-gray-200 leading-relaxed" >
+          {{lessonParam?.description}}
         </p>
 
         <div class="d-flex aligm-item-center gap-2 mt-3">
-          <img
+          <img 
             height="50"
             width="50"
             class="rounded-5 border"
-            src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=634&q=80"
+            src="{{lessonParam?.instructor.avatarUrl}}"
             alt=""
           />
 
-          <div class="leading-relaxed">
-            <strong class="font-bold text-2xl d-block">bruno</strong>
-            <span class="text-gray-200 text-sm d-block">bio</span>
+          <div class="leading-relaxed" >
+            <strong class="font-bold text-2xl d-block" >{{lessonParam?.instructor.fullName}}</strong>
+            
           </div>
 
         </div>
@@ -56,6 +45,7 @@
           Acesse o desafio
         </a>
       </div>
+      
     </section>
   </div>
 </div>
