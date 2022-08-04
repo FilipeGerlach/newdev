@@ -7,7 +7,7 @@ import { CourseResponseType, CourseService } from 'src/app/course.service';
 })
 export class HomeComponent implements OnInit {
   courseService: CourseService
-  course: CourseResponseType
+  course: any
   
 
   constructor(courseService: CourseService) {
@@ -17,7 +17,11 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.course = await this.courseService.getCourse()
+
     console.log(this.course)
+    
+
+    
     
 
   }

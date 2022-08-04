@@ -28,7 +28,7 @@ export class CourseService {
 
     const data = await response.json() as CourseResponseType
     
-    console.log('get couse by ID', data)
+    console.log('get course by ID', data)
     return data
   }
   async getCourse():Promise<CourseResponseType>{
@@ -37,7 +37,7 @@ export class CourseService {
 
     const data = await response.json() as CourseResponseType
     
-    console.log('get couse', data)
+    console.log('get course')
     return data
   }
 }

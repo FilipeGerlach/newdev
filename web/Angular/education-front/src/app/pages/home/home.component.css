@@ -1,0 +1,25 @@
+.card {
+  color: black;
+  min-height: 7rem;
+  justify-content: center;
+  align-items: center;
+}
+.card:hover {
+  color: #fff;
+  background-color: inherit;
+  border: 1px solid rgb(101, 216, 130);
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-title {
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.card:hover .card-text {
+  color: rgb(101, 216, 130);
+}
