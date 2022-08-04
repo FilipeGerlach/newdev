@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="mt-3 d-flex row mx-1">
-  <div class="mt-3 col-3 mb-3" *ngFor="let course of course">
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
+  <div class="mt-3 col-3 mb-3" *ngFor="let course of course" [routerLink]="['/courses', course.id]">
+    <div class="card" style="width: 18rem"  routerLinkActive="router-link-active" >
+      <div class="card-body" >
         <h5 class="card-title">{{ course.title }}</h5>
         <p class="card-text">{{ course.description }}</p>
       </div>

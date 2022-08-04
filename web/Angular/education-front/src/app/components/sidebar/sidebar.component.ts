@@ -8,7 +8,7 @@ import { lessonType } from 'src/app/course.service';
 })
 export class SidebarComponent implements OnInit {
   @Output () populateLessonEvent: EventEmitter<any> = new EventEmitter();
-  @Input () lessons: lessonType[] | null = null;
+  @Input () lessons!: lessonType[]
   
   constructor() { }
   
